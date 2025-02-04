@@ -1,0 +1,25 @@
+from sklearn.feature_extraction.text import CountVectorizer
+
+def vectorize_sentence(sentence):
+    
+    vectorizer = CountVectorizer()
+    
+    
+    X = vectorizer.fit_transform([sentence])
+    
+    
+    vocabulary = vectorizer.get_feature_names_out()
+    
+    
+    vector = X.toarray()
+    
+    return vector, vocabulary
+
+
+sentence = input("Enter a sentence: ")
+vector, vocabulary = vectorize_sentence(sentence)
+
+print("Vocabulary (unique words):", vocabulary)
+print("Vectorized form (numerical representation):")
+print(vector)
+
