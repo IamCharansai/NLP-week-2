@@ -1,0 +1,29 @@
+import nltk 
+from nltk.sentiment.vader import SentimentIntensityAnalyzer 
+
+# Download the VADER lexicon if not already done
+nltk.download('vader_lexicon')
+
+def analyze_sentiment(text):
+    sia = SentimentIntensityAnalyzer()
+    sentiment = sia.polarity_scores(text)
+    compound = sentiment['compound']  # Corrected variable name
+    if compound >= 0.5:
+        return "positive"
+    elif compound <= -0.5:
+        return "negative"
+    else:
+        return "neutral"  # Corrected indentation
+
+# Example text
+text1 = "love their product!"  # Corrected variable name
+result = analyze_sentiment(text1)
+print(f"The sentiment of the text is: {result}")
+
+text2 = "worst product ever seen!"  # Corrected variable name and spelling of "worst"
+result = analyze_sentiment(text2)
+print(f"The sentiment of the text is: {result}")
+
+text3 = "the product is either good or good!"  # Corrected variable name
+result = analyze_sentiment(text3)
+print(f"The sentiment of the text is: {result}") 
