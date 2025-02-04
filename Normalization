@@ -1,0 +1,34 @@
+import nltk
+from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.stem import PorterStemmer
+from nltk.stem import WordNetLemmatizer
+
+# Download the necessary NLTK data (for tokenizing, lemmatizing)
+nltk.download('punkt')
+nltk.download('wordnet')
+
+# Initialize the stemmer and lemmatizer
+stemmer = PorterStemmer()
+lemmatizer = WordNetLemmatizer()
+
+# Example text
+text = """The striped bats are hanging on their feet for best results. The bats are flying in the air."""
+
+# Tokenize the text into words
+words = ["running","runner","better","dog","flying"]
+
+# Perform stemming
+stemmed_words = [stemmer.stem(word) for word in words]
+
+# Perform lemmatization
+lemmatized_words = [lemmatizer.lemmatize(word) for word in words]
+
+# Print the results
+print("Original Words:")
+print(words)
+
+print("\nStemmed Words:")
+print(stemmed_words)
+
+print("\nLemmatized Words:")
+print(lemmatized_words)
