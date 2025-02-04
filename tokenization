@@ -1,0 +1,16 @@
+import nltk
+ 
+# Ensure necessary NLTK models are available
+nltk.download('punkt')  
+ 
+# Text for tokenization
+text = "The above program tokenization is executed successfully"
+ 
+# Word tokenization
+word_tokens = nltk.word_tokenize(text)
+print("Word Tokens:", word_tokens)
+ 
+# Sentence tokenization (although here it’s just one sentence, it will tokenize it)
+sentence_tokens = nltk.sent_tokenize(text)
+print("\nSentence Tokens:", sentence_tokens)
+ 
